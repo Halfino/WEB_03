@@ -13,6 +13,14 @@ class User < ActiveRecord::Base
              nebo (7/6)xxxxxxxx "}
   validates :email, presence: {message: "Toto pole nemuze byt prazdne"},
             format: {with: /\A([\w\.%\+\-]+)@([\w\-]+\.)+(\w{2,3})\z/i, message: "Neplatny email"}
-  devise :database_authenticatable, :registerable
+  devise :database_authenticatable, :registerable,:authentication_keys => [:username]
   mount_uploader :image, ImageUploader
+
+  def email_required?
+    false
+  end
+
+  def email_changed?
+    false
+  end
 end

@@ -1,7 +1,5 @@
-<!--TODO plne importovat carrierwave-->
-<!--TODO thumbnail z fotky if user logged-->
-<!--TODO upravit odkaz na registraci-->
-<!--TODO udelat odkaz na editaci po prihlaseni?? zatim nevim kam ho dam. asi doprava-->
+<!--TODO dodelat vypis detailu-->
+<!--TODO dodelat editaci profilu-->
 <!--TODO udelat administaraci, vice v to do v adminu-->
 <html lang="cs">
 <head>
@@ -23,15 +21,20 @@
 <section id="head">
   <div id="menu">
     <nav>
-      <a class="menu-button" <%= link_to "HOME", 'index' %></a>
-      <a class="button-actual" <%= link_to "HLEDÁM", 'sitters' %></a>
+      <a class="menu-button" <%= link_to "HOME", '/pages/index' %></a>
+      <a class="button-actual" <%= link_to "HLEDÁM", '/pages/sitters' %> </a>
       <% if user_signed_in? %>
           <a class="menu-button" <%= link_to 'PROFIL', edit_user_registration_path, :class => 'navbar-link' %></a>
       <% else %>
           <a class="menu-button" <%= link_to "CHCI HLÍDAT", new_user_registration_path, :class => 'navbar-link'  %></a>
       <% end %>
       <% if user_signed_in? %>
-          <a class="menu-button"<%= link_to "LOGOUT", destroy_user_session_path, method: delete, :class => 'navbar-link'%></a>
+          <a class="menu-button"<%= link_to "LOGOUT", destroy_user_session_path, method: :delete, :class => 'navbar-link'%></a>
+          <% if image_tag current_user.image.url == nil %>
+              <%= image_tag current_user.image.url, :class => "style_photo"%>
+          <% else %>
+              <%=  image_tag current_user.image.thumb.url, :class => "style_photo"%>
+          <% end %>
       <% else %>
           <a class="menu-button" <%= link_to "LOGIN", new_user_session_path, :class => 'navbar-link'  %></a>
       <% end %>
@@ -43,12 +46,12 @@
 <section id="content">
   <article id="text">
     <h1 class="text">Seznam registrovaných "hlídaček"</h1>
-    <% @allSitters.each do |sitter| %>
-        <p>Jmeno: <%=sitter.name%><br>
-          Vek: <%= sitter.age%><br>
-          Mesto: <%= sitter.city%><br>
-          Popis: <%= sitter.description%><br>
-          <%= link_to 'Zobraz detajly', sitter %>
+    <% @users.each do |user| %>
+        <p>Jmeno: <%= user.name%><br>
+          Vek: <%= user.age%><br>
+          Mesto: <%= user.city%><br>
+          Popis: <%= user.description%><br>
+          <%= link_to "detaily", user%>
         </p>
     <% end %>
   </article>

@@ -6,6 +6,6 @@ class PagesController < ApplicationController
 
   def sitters
     @sideArticles = Article.where(category_id: 2).where(published: "t")
-    @mainArticles = Article.where(category_id: 1).where(published: "t")
+    @users = User.all
   end
 end
