@@ -24,10 +24,15 @@
       <% if user_signed_in? %>
           <a class="menu-button"<%= link_to "LOGOUT", destroy_user_session_path, method: :delete, :class => 'navbar-link'%></a>
 
+          <% if image_tag current_user.image.url == nil %>
+            <%= image_tag current_user.image.url, :class => "style_photo"%>
+          <% else %>
+              <%=  image_tag current_user.image.thumb.url, :class => "style_photo"%>
+          <% end %>
       <% else %>
          <a class="menu-button" <%= link_to "LOGIN", new_user_session_path, :class => 'navbar-link'  %></a>
       <% end %>
-      <%= image_tag current_user.image.thumb.url, :class => "style_photo"%>
+
     </nav>
 
   </div>
@@ -37,7 +42,8 @@
 
 <section id="content">
   <article id="text">
-
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <% @mainArticles.each do |article| %>
         <h1><%=article.title%></h1>
         <p class="text"><%=article.text%></p>
