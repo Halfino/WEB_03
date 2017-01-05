@@ -1,0 +1,192 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+/* CSS dokument for my semestral work */
+
+body {
+    background-color: #e3f1da;
+}
+
+#head {
+    margin: auto;
+    width: 950px;
+    height: 375px;
+}
+
+#menu {
+    margin: auto;
+    width: 950px;
+    background-color: #75b748;
+}
+
+nav {
+    margin-left: 140px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.5em;
+    font-weight: regular;
+    height: 50px;
+}
+/* CSS style for reference buttons*/
+.menu-button {
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    background-color: #75b748;
+    color: white;
+    display: inline-block;
+    width: 220px;
+}
+
+.logout {
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    background-color: #75b748;
+    color: white;
+    display: inline-block;
+    width: 100px;
+}
+.logout:HOVER{
+    background-color: white;
+    color: #75b748;
+}
+.menu-button:LINK,#menu-button:VISITED {
+    background-color: #75b748;
+    color: #e3f1da;
+}
+
+.menu-button:HOVER,#menu-button:ACTIVE {
+    background-color: white;
+    color: #75b748;
+}
+
+.button-actual {
+    text-align: center;
+    line-height: 50px;
+    background-color: #e3f1da;
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    width: 220px;
+}
+
+.button-actual:HOVER {
+    background-color: white;
+    color: #75b748;
+}
+/* banner with image */
+#banner {
+    background-image: url('/assets/banner.jpg');
+    background-repeat: no-repeat;
+    padding-top: 320px;
+    border-bottom: 5px solid #75b748;
+}
+
+#content {
+    margin: auto;
+    width: 940px;
+    background-color: #75b748;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#text {
+    width: 605px;
+    float: left;
+    background-color: white;
+    padding-top: 45px;
+    padding-left: 45px;
+    padding-right: 45px;
+    padding-bottom: 25px;
+    border-right: 2px solid #75b748;
+}
+
+#right-column {
+    width: 240px;
+    float: right;
+    background-color: white;
+}
+/* style for reference to lookign for babysitter */
+
+
+.but-text {
+    margin-top: 212px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2em;
+    font-weight: regular;
+    color: white;
+}
+/* style for reference for babysitters registration */
+
+
+#picus {
+    width: 950px;
+    line-height: 0.5px;
+    text-align: center;
+    display: inline-block;
+    border-top: 2px solid #75b748;
+}
+/* style of right column text */
+.text-right {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+}
+/* style of content text */
+.text {
+    padding-right: 15px;
+    padding-bottom: 15px;
+}
+
+h1 {
+    color: #F85B35;
+    font-size: 1.5em;
+    line-height: 2px;
+}
+
+h2 {
+    color: #F85B35;
+    font-weight: normal;
+    line-height: 2px;
+}
+/* style of titel in right box */
+.h-right {
+    padding-left: 15px;
+    padding-top: 30px;
+    color: #F85B35;
+    font-weight: normal;
+    line-height: 2px;
+}
+
+#adminText{
+    width: 865px;
+    float: left;
+    background-color: white;
+    padding-top: 45px;
+    padding-left: 40px;
+    padding-right: 45px;
+    padding-bottom: 25px;
+
+}
+
+#contentAdmin {
+    margin: auto;
+    width: 955px;
+    background-color: #75b748;
+}
+
+.sitForm{
+    text-align: center;
+}

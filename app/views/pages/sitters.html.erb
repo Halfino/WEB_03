@@ -1,0 +1,54 @@
+
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans"
+        rel="stylesheet">
+  <% content_for :title, "Hlídání dětí" %>
+</head>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" type="text/css" href="CSS/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans"
+        rel="stylesheet">
+  <% content_for :title, "Hlídání dětí" %>
+</head>
+
+<body>
+<section id="head">
+  <div id="menu">
+    <nav>
+      <a class="menu-button" <%= link_to "HOME", 'index' %></a>
+      <a class="button-actual" <%= link_to "HLEDÁM", 'sitters' %></a>
+      <a class="menu-button" <%= link_to "CHCI HLÍDAT", '/sitters/new' %></a>
+    </nav>
+  </div>
+
+  <div id="banner"></div>
+</section>
+<section id="content">
+  <article id="text">
+    <h1 class="text">Seznam registrovaných "hlídaček"</h1>
+    <% @allSitters.each do |sitter| %>
+        <p>Jmeno: <%=sitter.name%><br>
+          Vek: <%= sitter.age%><br>
+          Mesto: <%= sitter.city%><br>
+          Popis: <%= sitter.description%><br>
+          <%= link_to 'Zobraz detajly', sitter %>
+        </p>
+    <% end %>
+  </article>
+  <aside id="right-column">
+    <% @sideArticles.each do |article| %>
+        <h2 class="h-right"><%=article.title %></h2>
+        <p class="text-right"><%=article.text %></p>
+    <%end%>
+  </aside>
+
+  <div id="picus">
+    <p>Onehalf<sup>®</sup>  <%= link_to "Administrace", '/admin/admin'%></p>
+  </div>
+</section>
+
+</body>
