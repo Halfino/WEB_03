@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   validates :username, presence: {message: "Toto pole nemuze byt prazdne"}, length: 3..20,
             uniqueness: {message: "Toto uzivatelske jmeno jiz existuje"}
   validates :age, presence: {message: "Toto pole nemuze byt prazdne"}, length:1..2,
-            format: {with: /\A(\d[8..9])|([2..9]\d)/, message: "Vek musi byt v rozmezi 18 - 99 let"}
+            format: {with: /\A(\d[8-9])|\A([2-9]\d)/, message: "Vek musi byt v rozmezi 18 - 99 let"}
   validates :description, presence: {message: "Toto pole nemuze byt prazdne."}, length: 1..500
   validates :city, presence: {message: "Toto pole nemuze byt prazdne"}
   validates :phone, presence: {message: "Toto pole nemuze byt prazdne"}, format: {with: /\A([+][4][2][0]([6]|[7])
