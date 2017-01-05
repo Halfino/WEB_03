@@ -1,28 +1,9 @@
 == README
+semestral work for WEB class at Unicorn college. My project about babysitting with basic authentication and uploading profile image.
+easy administration with http auth included.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Non responsive design
 
-Things you may want to cover:
+Used ruby 2.2.4 and rails 4.2.3
+DB sqlite3
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
