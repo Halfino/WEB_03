@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-  validates :title, :presence
-  validates :text, :presence
+  validates :title, presence: {message: "Toto pole nemuze byt prazdne" }
+  validates :text, presence: {message: "Toto pole nemuze byt prazdne"}
   # GET /articles
   # GET /articles.json
   def index
