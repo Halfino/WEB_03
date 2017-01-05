@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-
+  validates :title, :presence
+  validates :text, :presence
   # GET /articles
   # GET /articles.json
   def index
