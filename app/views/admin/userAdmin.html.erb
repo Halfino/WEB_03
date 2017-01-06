@@ -1,0 +1,63 @@
+<section id="head">
+  <div id="menu">
+    <nav>
+      <a class="menu-button" <%= link_to "Web Home", '/pages/index' %></a>
+      <a class="menu-button" <%= link_to "Clanky", '/articles' %> </a>
+      <a class="button-actual" <%= link_to "Uzivatele", '/admin/userList' %></a>
+      <a class="logout" <%= link_to "Dashboard", '/pages/dashboard'%></a>
+    </nav>
+  </div>
+  <section id="contentAdmin">
+    <article id="adminText">
+      <h1 class="sitForm"><%= @user.username%></h1>
+
+      <p>
+        <strong>Name:</strong>
+        <%= @user.name %>
+      </p>
+      <p>
+        <strong>Age:</strong>
+        <%= @user.age %>
+      </p>
+      <p>
+        <strong>City:</strong>
+        <%= @user.city%>
+      </p>
+      <p>
+        <strong>Image:</strong>
+        <%= @user.image %>
+      </p>
+
+      <p>
+        <strong>Phone:</strong>
+        <%= @user.phone %>
+      </p>
+
+      <p>
+        <strong>Email:</strong>
+        <%= @user.email%>
+      </p>
+
+      <p>
+        <strong>Description:</strong>
+        <%= @user.description %>
+      </p>
+
+      <p>
+        <strong>Created at:</strong>
+        <%= @user.created_at%>
+      </p>
+
+      <p>
+        <strong>Updated at:</strong>
+        <%= @user.updated_at%>
+      </p>
+
+
+
+      <%= link_to "Editace uzivatele", :controller => "admin", :action => "userEdit", :user => @user.id %>
+      <%= link_to "Back", :controller => "admin", :action => "userList" %>
+    </article>
+
+  </section>
+</section>

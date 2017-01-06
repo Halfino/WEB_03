@@ -1,0 +1,62 @@
+<section id="head">
+  <div id="menu">
+    <nav>
+      <a class="menu-button" <%= link_to "Web Home", '/pages/index' %></a>
+      <a class="button-actual" <%= link_to "Clanky", '/articles' %> </a>
+      <a class="menu-button" <%= link_to "Uzivatele", '/admin/userList' %></a>
+      <a class="logout" <%= link_to "Dashboard", '/pages/dashboard'%></a>
+    </nav>
+  </div>
+  <section id="contentAdmin">
+    <article id="adminText">
+      <h1 class="sitForm">Popis funkci a odkazu</h1>
+      <p> Vitejte na dashboardu me semestralni prace. Cela prace je postavena na zelene louce a je dodelana
+      funkcnost dle mych schopnosti. Tak tedy nejprve seznam implementaci nad ramec:
+      </p>
+      <ul>
+        <li>gem CarrierWave</li>
+        <li>gem Devise</li>
+      </ul>
+      <P>
+        <strong>Popis odkazu na dashboardu:</strong><br>
+      <ul>
+        <li>Web Home: odkaz vede na puvodni mainpage frontendu. Detaily viz.niz</li>
+        <li>Clanky: odkaz vede na administraci textu na webu. Detaily viz. niz</li>
+        <li>Uzivatele: Vede na administraci uzivatelu. Detaily viz. niz</li>
+      </ul>
+      </P>
+
+      <p>
+        <strong>Nove funkce webu - frontendu:</strong><br>
+        Logika frontendu je kompletne prekopana. Za pomoci gemu devise a carrier wave jsem se pokusil o rozbehani
+        registraci vcetne uploadu profilove foto. Uzivatel po prihlaseni muze editovat nektere sve detaily, ci smazat
+        ucet. Indikace prihlaseni je krom zmeny odkazu v hornim menu z login na logout take thumbnailem sve profilove
+        fotografie v pravem hornim rohu. V pripade, ze uzivatel sve foto nenahral, zobrazi se defaltni fotografie na
+        vsech mistech, kde se foto zobrazuje. Validace provedena snad na vse pomoci validate a regexp.
+      </p>
+      <p>
+        <strong>Funkce administrace clanku</strong><br>
+        Po prihlaseni do adminu (pouzit jednoduchy http auth system) je mozne kompletne ridit texty na webu, jez jsou
+        rozdeleny do dvou kategorii a to mainArticle a sideArticle. Podle toho se texty zobrazuji. Dalsi kategorie by
+        nebyl problem, ale pro tento projekt mi prislo zbytecne psat dalsi texty na jine stranky.
+      </p>
+      <p>
+        <strong>funkce administrace uzivatelu</strong><br>
+        moznost editace uzivatele krom hesla.
+      </p>
+
+      <p>
+        <strong>nedostatky:</strong><br>
+        Jako nejvetsi nedostatek bude u mne stejne jako v predchozim bode chybejici M:N asociace. Vazne netusim, kam ju
+        v tomhle projektu dat.
+        Design stranky by mohl byt propracovanejsi. Bohuzel mi chybi feedback z druheho bodu prace, kdy bych mohl cerpat
+        ponauceni pro tento bod a vic aplikaci uhladit.
+      </p>
+      <p>
+        <strong>Pokud jste docetl az sem, obdivuji Vasi trpelivost a preji prijemne zacitky pri kontrole me prace</strong>
+      </p>
+
+    </article>
+
+  </section>
+</section>

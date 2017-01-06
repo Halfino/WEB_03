@@ -1,24 +1,62 @@
+
+
 <p id="notice"><%= notice %></p>
+<section id="head">
+  <div id="menu">
+    <nav>
+      <a class="menu-button" <%= link_to "Web Home", '/pages/index' %></a>
+      <a class="button-actual" <%= link_to "Clanky", '/articles' %> </a>
+      <a class="menu-button" <%= link_to "Uzivatele", 'admin/userList' %></a>
+      <a class="logout" <%= link_to "Dashboard", '/pages/dashboard'%></a>
+    </nav>
+  </div>
+  <section id="contentAdmin">
+    <article id="adminText">
+      <h1 class="sitForm"><%= @article.title%></h1>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+      <p>
+        <strong>Title:</strong>
+        <%= @article.title %>
+      </p>
+      <p>
+        <strong>Text:</strong>
+        <%= @article.text %>
+      </p>
+      <p>
+        <strong>Belongs to category:</strong>
+        <%= @article.category.name%>
+      </p>
+      <p>
+        <strong>Published:</strong>
+        <%= @article.published %>
+      </p>
 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
+      <p>
+        <strong>Created at:</strong>
+        <%= @article.created_at %>
+      </p>
 
-<p>
-  <strong>Published:</strong>
-  <%= @article.published %>
-</p>
+      <p>
+        <strong>Updated at:</strong>
+        <%= @article.updated_at %>
+      </p>
 
-<p>
-  <strong>Created at:</strong>
-  <%= @article.created_at %>
-</p>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+
+        <%= link_to 'Edit', edit_article_path(@article) %> |
+        <%= link_to 'Back', articles_path %>
+
+    </article>
+
+  </section>
+</section>
+
+
+
+
+
+
+
+
+
+

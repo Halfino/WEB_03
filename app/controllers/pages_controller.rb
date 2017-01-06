@@ -8,4 +8,8 @@ class PagesController < ApplicationController
     @sideArticles = Article.where(category_id: 2).where(published: "t")
     @users = User.all
   end
+
+  def dashboard
+
+  end
 end

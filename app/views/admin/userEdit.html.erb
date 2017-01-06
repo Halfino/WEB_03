@@ -1,0 +1,69 @@
+<section id="head">
+  <div id="menu">
+    <nav>
+      <a class="menu-button" <%= link_to "Web Home", '/pages/index' %></a>
+      <a class="menu-button" <%= link_to "Clanky", '/articles' %> </a>
+      <a class="button-actual" <%= link_to "Uzivatele", '/admin/userList' %></a>
+      <a class="logout" <%= link_to "Dashboard", '/pages/dashboard'%></a>
+    </nav>
+  </div>
+  <section id="contentAdmin">
+    <article id="adminText">
+      <h1 class="sitForm">Edit user <%=@user.username%></h1>
+      <%= form_for(@user) do |f| %>
+
+
+
+          <div class="sitForm">
+            <strong><%= f.label :jmeno%>*</strong><br>
+            <%= f.text_field :name%>
+          </div>
+
+          <div class="sitForm">
+            <strong><%= f.label :username%>*</strong><br>
+            <%= f.text_field :username%>
+          </div>
+
+          <div class="sitForm">
+            <strong><%= f.label :vek%>*</strong><br/>
+            <%= f.text_field :age, autocomplete: "off"%>
+          </div>
+
+          <div class="sitForm">
+            <strong><%= f.label :mesto%>*</strong><br/>
+            <%= f.text_field :city, autocomplete: "off"%>
+          </div>
+
+          <div class="sitForm">
+            <strong><%= f.label :email %>*</strong><br />
+            <%= f.email_field :email, autofocus: true %>
+          </div>
+
+          <div class="sitForm">
+            <strong><%=f.label :popis%>*</strong><br/>
+            <%= f.text_area :description, autocomplete: "off", :rows => 6 %>
+          </div>
+          <p class="sitForm">
+            <label>Fotka</label>
+            <%= image_tag(@user.image.url) if @user.image? %>
+            <%= f.file_field :image %>
+          </p>
+          <p class="sitForm">
+            <label>
+              <%= f.check_box :remove_image %>
+              Remove image
+            </label>
+          </p>
+
+          <p class="sitForm">
+            <em>Pri smazani polozek oznacenych * dojde k jejich zachovani</em>
+          </p>
+
+          <p class="sitForm">
+          <%= f.submit "Save changes", class: "btn btn-primary" %>
+          </p>
+      <% end %>
+    </article>
+
+  </section>
+</section>

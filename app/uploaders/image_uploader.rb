@@ -1,7 +1,12 @@
 # encoding: utf-8
 
 class ImageUploader < CarrierWave::Uploader::Base
+  after :remove, :clear_upload
 
+  def clear_upload
+    @file = @filename = @original_filename = @cache_id = @version = @storage = nil
+    model.send(:write_attribute, mounted_as, nil)
+  end
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick

@@ -1,0 +1,42 @@
+<section id="head">
+  <div id="menu">
+    <nav>
+      <a class="menu-button" <%= link_to "Web Home", '/pages/index' %></a>
+      <a class="menu-button" <%= link_to "Clanky", '/articles' %> </a>
+      <a class="button-actual" <%= link_to "Uzivatele", '/admin/userList' %></a>
+      <a class="logout" <%= link_to "Dashboard", '/pages/dashboard'%></a>
+    </nav>
+  </div>
+  <section id="contentAdmin">
+    <article id="adminText">
+      <h1 class="sitForm">Listing users</h1>
+      <table>
+        <thead>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Created at</th>
+        <th>Updated at</th>
+        <th>Details</th>
+        <th>Delete</th>
+        </thead>
+        <tbody>
+        <% @users = User.all %>
+          <% @users.each do |user|%>
+            <tr>
+              <td><%= user.name%></td>
+              <td><%= user.username%></td>
+              <td><%= user.email%></td>
+              <td><%= user.created_at%></td>
+              <td><%= user.updated_at%></td>
+              <td><%= link_to 'Show details', :controller => "admin", :action => "userAdmin", :user => user.id %></td>
+              <td><%= link_to "Destroy", user, method: :delete, data: { confirm: "You sure?" } %></td>
+            </tr>
+            <%end%>
+        </tbody>
+      </table>
+
+    </article>
+
+  </section>
+</section>

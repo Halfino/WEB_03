@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
+  get 'admin/userList'
+
+  get 'admin/userAdmin'
+  get 'admin/userEdit'
   devise_for :users, :controllers => { registrations: 'registrations' }
   resources :articles
   resources :users
-  root to: 'pages#index'
+  root to: 'pages#dashboard'
   get 'pages/index'
   get 'pages/sitters'
-  get 'pages/details'
+  get 'pages/dashboard'
 
+get 'admin_user' => 'admin#userList'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
