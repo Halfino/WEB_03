@@ -3,12 +3,12 @@
 <section id="head">
   <div id="menu">
     <nav>
-      <a class="button-actual" <%= link_to "HOME", '/pages/index' %></a>
+      <a class="menu-button" <%= link_to "HOME", '/pages/index' %></a>
       <a class="menu-button" <%= link_to "HLEDÁM", '/pages/sitters' %> </a>
       <% if user_signed_in? %>
           <a class="menu-button" <%= link_to 'PROFIL', edit_user_registration_path, :class => 'navbar-link' %></a>
       <% else %>
-          <a class="menu-button" <%= link_to "CHCI HLÍDAT", new_user_registration_path, :class => 'navbar-link'  %></a>
+          <a class="button-actual" <%= link_to "CHCI HLÍDAT", new_user_registration_path, :class => 'navbar-link'  %></a>
       <% end %>
       <% if user_signed_in? %>
           <a class="menu-button"<%= link_to "LOGOUT", destroy_user_session_path, method: delete, :class => 'navbar-link'%></a>
@@ -99,7 +99,7 @@
       <%end%>
     </aside>
     <div id="picus">
-      <p>Onehalf<sup>®</sup> <%= link_to "Administrace", '/admin/admin'%></p>
+      <p>Onehalf<sup>®</sup> <%= link_to "Administrace", '/pages/dashboard'%></p>
     </div>
   </section>
 </section>

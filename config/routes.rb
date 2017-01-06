@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'category/new'
+
   get 'admin/userList'
 
   get 'admin/userAdmin'
