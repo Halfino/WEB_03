@@ -1,43 +1,106 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans"
+        rel="stylesheet">
+  <% content_for :title, "Hlídání dětí" %>
+</head>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="sitForm">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+<body>
+<section id="head">
+  <div id="menu">
+    <nav>
+      <a class="menu-button" <%= link_to "HOME", '/pages/index' %></a>
+      <a class="menu-button" <%= link_to "HLEDÁM", '/pages/sitters' %> </a>
+      <a class="button-actual" <%= link_to 'PROFIL', edit_user_registration_path, :class => 'navbar-link' %></a>
+      <a class="menu-button"<%= link_to "LOGOUT", destroy_user_session_path, method: :delete, :class => 'navbar-link'%></a>
+      <%=  image_tag current_user.image.thumb.url, :class => "style_photo"%>
+    </nav>
   </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+  <div id="banner"></div>
+</section>
 
-  <div class="sitForm">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+<section id="content">
+  <article id="text">
+    <h1 class="sitForm">Editace uzivatelskeho uctu <%= current_user.username%></h1>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= devise_error_messages! %>
+        <div class="text">
+          <p class="text">
+          <h2>Nasledujici parametry nelze menit!</h2>
+            <strong>Jmeno: </strong> <%= current_user.name%><br/>
+            <strong>Email: </strong> <%= current_user.email%><br/>
+          </p>
+        </div>
+        <%=  image_tag current_user.image.medium.url%>
+        <div class="sitForm">
+          <strong><%= f.label :vek%></strong><br/>
+          <%= f.text_field :age, autocomplete: "off"%>
+        </div>
+
+        <div class="sitForm">
+          <strong><%= f.label :mesto%></strong><br/>
+          <%= f.text_field :city, autocomplete: "off"%>
+        </div>
+
+        <div class="sitForm">
+          <strong><%= f.label :email %></strong><br />
+          <%= f.email_field :email, autofocus: true %>
+        </div>
+
+        <div class="sitForm">
+          <strong><%=f.label :popis%></strong><br/>
+          <%= f.text_area :description, autocomplete: "off", :rows => 6 %>
+        </div>
+        <div class="sitForm">
+          <strong><%= f.label :password %></strong><br> <em>(pro ponechani stavajiciho hesla nechte prazdne)</em><br />
+          <%= f.password_field :password, autocomplete: "off" %>
+          <% if @minimum_password_length %>
+              <br />
+              <em><%= @minimum_password_length %> characters minimum</em>
+          <% end %>
+        </div>
+
+        <div class="sitForm">
+          <strong><%= f.label :potvrzeni_hesla %></strong><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </div>
+
+        <div class="sitForm">
+          <strong>Nahrani nove fotky</strong><br/>
+          <%= f.label :image do %>
+              <%= f.file_field :image %>
+          <% end %>
+        </div>
+
+        <div class="sitForm">
+          <strong><%= f.label :current_password %></strong><br/> <em>(zadejte vase heslo pro ulozeni zmen)</em><br />
+          <%= f.password_field :current_password, autocomplete: "off" %>
+        </div>
+
+        <div class="sitForm">
+          <%= f.submit "Update" %>
+        </div>
     <% end %>
+    <div class="sitForm">
+      <%= button_to "Smazat ucet", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+    </div>
+
+  </article>
+  <aside id="right-column">
+    <% @sideArticles = Article.where(category_id: 2).where(published: "t")%>
+    <% @sideArticles.each do |article| %>
+        <h2 class="h-right"><%=article.title %></h2>
+        <p class="text-right"><%=article.text %></p>
+    <%end%>
+  </aside>
+  <div id="picus">
+    <p>Onehalf<sup>®</sup> <%= link_to "Administrace", '/admin/admin'%></p>
   </div>
+</section>
+</section>
 
-  <div class="sitForm">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="sitForm">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</body>
+</html>

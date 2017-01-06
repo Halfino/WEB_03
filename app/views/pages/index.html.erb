@@ -20,7 +20,7 @@
       <% end %>
       <% if user_signed_in? %>
           <a class="menu-button"<%= link_to "LOGOUT", destroy_user_session_path, method: :delete, :class => 'navbar-link'%></a>
-              <%=  image_tag current_user.image.thumb.url, :class => "style_photo"%>
+          <%=  image_tag current_user.image.thumb.url, :class => "style_photo"%>
 
       <% else %>
          <a class="menu-button" <%= link_to "LOGIN", new_user_session_path, :class => 'navbar-link'  %></a>

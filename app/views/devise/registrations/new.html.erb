@@ -59,7 +59,7 @@
 
           <div class="sitForm">
             <%= f.label :telefon%><br/>
-            <%= f.text_area :phone%>
+            <%= f.text_field :phone%>
           </div>
 
           <div class="sitForm">
@@ -74,6 +74,7 @@
             <%= f.label :password_confirmation %><br/>
             <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
           </div>
+
           <div class="sitForm">
             <%= f.label :image do %><br/>
                 <%= f.file_field :image %>

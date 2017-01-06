@@ -30,11 +30,7 @@
       <% end %>
       <% if user_signed_in? %>
           <a class="menu-button"<%= link_to "LOGOUT", destroy_user_session_path, method: :delete, :class => 'navbar-link'%></a>
-          <% if image_tag current_user.image.url == nil %>
-              <%= image_tag current_user.image.url, :class => "style_photo"%>
-          <% else %>
-              <%=  image_tag current_user.image.thumb.url, :class => "style_photo"%>
-          <% end %>
+          <%=  image_tag current_user.image.thumb.url, :class => "style_photo"%>
       <% else %>
           <a class="menu-button" <%= link_to "LOGIN", new_user_session_path, :class => 'navbar-link'  %></a>
       <% end %>
@@ -47,10 +43,11 @@
   <article id="text">
     <h1 class="text">Seznam registrovaných "hlídaček"</h1>
     <% @users.each do |user| %>
-        <p>Jmeno: <%= user.name%><br>
-          Vek: <%= user.age%><br>
-          Mesto: <%= user.city%><br>
-          Popis: <%= user.description%><br>
+        <p><strong>Jmeno: </strong><%= user.name%><br/>
+          <%= image_tag user.image.small.url%><br/>
+          Vek: <%= user.age%><br/>
+          Mesto: <%= user.city%><br/>
+          Popis: <%= user.description%><br/>
           <%= link_to "detaily", user%>
         </p>
     <% end %>

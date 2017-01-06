@@ -41,10 +41,16 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   version :medium do
     process :resize_to_fit => [250, 250]
+    def default_url
+      "/assets/" + [version_name, "rsz_default.png"].compact.join('_')
+    end
   end
 
   version :small do
     process :resize_to_fit => [125, 125]
+    def default_url
+      "/assets/" + [version_name, "rsz_default.png"].compact.join('_')
+    end
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
