@@ -1,7 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
-  validates :title, presence: {message: "Toto pole nemuze byt prazdne" }
-  validates :text, presence: {message: "Toto pole nemuze byt prazdne"}
+
   # GET /articles
   # GET /articles.json
   def index
@@ -70,6 +69,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :text, :published, :created_at)
+      params.require(:article).permit(:title, :text,:category_id, :published, :created_at)
     end
 end

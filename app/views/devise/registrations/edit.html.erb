@@ -36,22 +36,22 @@
         </div>
         <%=  image_tag current_user.image.medium.url%>
         <div class="sitForm">
-          <strong><%= f.label :vek%></strong><br/>
+          <strong><%= f.label :vek%>*</strong><br/>
           <%= f.text_field :age, autocomplete: "off"%>
         </div>
 
         <div class="sitForm">
-          <strong><%= f.label :mesto%></strong><br/>
+          <strong><%= f.label :mesto%>*</strong><br/>
           <%= f.text_field :city, autocomplete: "off"%>
         </div>
 
         <div class="sitForm">
-          <strong><%= f.label :email %></strong><br />
+          <strong><%= f.label :email %>*</strong><br />
           <%= f.email_field :email, autofocus: true %>
         </div>
 
         <div class="sitForm">
-          <strong><%=f.label :popis%></strong><br/>
+          <strong><%=f.label :popis%>*</strong><br/>
           <%= f.text_area :description, autocomplete: "off", :rows => 6 %>
         </div>
         <div class="sitForm">
@@ -79,7 +79,9 @@
           <strong><%= f.label :current_password %></strong><br/> <em>(zadejte vase heslo pro ulozeni zmen)</em><br />
           <%= f.password_field :current_password, autocomplete: "off" %>
         </div>
-
+        <p class="sitForm">
+          <em>polozky oznacene "*" jsou povinne</em>
+        </p>
         <div class="sitForm">
           <%= f.submit "Update" %>
         </div>

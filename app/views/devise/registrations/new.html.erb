@@ -28,42 +28,42 @@
           <%= devise_error_messages! %>
 
           <div class="sitForm">
-            <%= f.label :uzivatelske_jmeno %><br/>
+            <%= f.label :uzivatelske_jmeno %>*<br/>
             <%= f.text_field :username, class: 'form-control' %>
           </div>
 
           <div class="sitForm">
-            <%= f.label :jmeno %><br/>
+            <%= f.label :jmeno %>*<br/>
             <%= f.text_field :name, class: 'form-control' %>
           </div>
 
           <div class="sitForm">
-            <%= f.label :vek%><br/>
+            <%= f.label :vek%>*<br/>
             <%= f.text_field :age, class: 'form-control'%>
           </div>
 
           <div class="sitForm">
-            <%= f.label :mesto%><br/>
+            <%= f.label :mesto%>*<br/>
             <%= f.text_field :city, class: 'form-control'%>
           </div>
 
           <div class="sitForm">
-            <%= f.label :popis%><br/>
+            <%= f.label :popis%>*<br/>
             <%= f.text_area :description, class: 'form-controll', :rows => 6%>
           </div>
 
           <div class="sitForm">
-            <%= f.label :email %><br/>
+            <%= f.label :email %>*<br/>
             <%= f.email_field :email, class: 'form-control' %>
           </div>
 
           <div class="sitForm">
-            <%= f.label :telefon%><br/>
+            <%= f.label :telefon%>*<br/>
             <%= f.text_field :phone%>
           </div>
 
           <div class="sitForm">
-            <%= f.label :password %><br/>
+            <%= f.label :password %>*<br/>
             <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
             <% if @validatable %>
                 <span class="help-block"><%= @minimum_password_length %> characters minimum</span>
@@ -71,7 +71,7 @@
           </div>
 
           <div class="sitForm">
-            <%= f.label :password_confirmation %><br/>
+            <%= f.label :password_confirmation %>*<br/>
             <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
           </div>
 
@@ -81,7 +81,9 @@
                 <%= f.hidden_field :image_cache %>
             <% end %>
           </div>
-
+          <p class="sitForm">
+            <em>polozky oznacene "*" jsou povinne</em>
+          </p>
           <div class="sitForm">
             <%= f.submit "Sign up" %>
           </div>
