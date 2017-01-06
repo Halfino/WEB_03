@@ -5,6 +5,18 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+User.delete_all
+sitters = [["Andrea Sucha", "25", "NErada plavu", "Praha", "Sucharka", "sucharka", "anda.such@seznam.cz", "+420728159784"],
+           ["Marie Mokra", "20", "Miluju vodu a male deti. Bez nich bych nemohla zit", "Praha", "Vodnice", "vodnice",
+           "mana.wet@gmail.com", "775123456"]]
+
+sitters.each do |name, age, description, city, username, password, email, phone|
+  user = User.new(name: name, age:age, description:description, city:city, username:username, password:password,
+                password_confirmation:password,email:email,phone:phone)
+  user.save!
+end
+
+
 
 articleList = [["Hlídání dětí", "Vítejte na portále 'Hlídání dětí', jenž je míněn jako rozcestník pro rodiče, jenž
                 potřebují pohlídat děti jak krátkodobě, tak i v dlouhodobém horizontu. Náš portál slouží pouze jako
