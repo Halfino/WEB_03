@@ -33,7 +33,10 @@
 
 <section id="content">
   <article id="text">
-    <p class="notice"><%= notice %></p>
+    <% if notice != nil%>
+
+    <p class="notice_muj"><%= notice %></p>
+        <%end%>
     <p class="alert"><%= alert %></p>
     <% @mainArticles.each do |article| %>
         <h1><%=article.title%></h1>

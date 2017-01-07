@@ -1,17 +1,23 @@
-<p id="notice"><%= notice %></p>
 <section id="head">
   <div id="menu">
     <nav>
       <a class="menu-button" <%= link_to "Web Home", '/pages/index' %></a>
       <a class="button-actual" <%= link_to "Clanky", '/articles' %> </a>
       <a class="menu-button" <%= link_to "Uzivatele", '/admin/userList' %></a>
-      <a class="logout" <%= link_to "Dashboard", '/pages/dashboard'%></a>
+      <a class="menu-button" <%= link_to "Dashboard", '/pages/dashboard'%></a>
     </nav>
   </div>
   <section id="contentAdmin">
     <article id="adminText">
-      <h1 class="sitForm">Vytvoreni noveho clanku</h1>
-      <%= render 'form' %>
+      <h1 class="sitForm">Vytvoreni nove kategorie</h1>
+      <div class="sitForm">
+      <%= form_for @category do |f| %>
+          <%= f.label :jmeno_categorie%>*<br>
+          <%= f.text_field :name %><br>
+          <em>Polozky oznacene * jsou povinne</em><br>
+          <%= f.submit %>
+      <% end %>
+      </div>
       <br>
     </article>
 

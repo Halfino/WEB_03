@@ -31,6 +31,10 @@
     <%= f.label :created_at %>*<br>
     <%= f.datetime_select :created_at %>
   </div>
+
+    <div class="sitForm">
+    <%=link_to "Pridani nove kategorie(vede na jinou stranku)", categories_new_path%>
+    </div>
   <div class="sitForm"><em>Polozky oznacene * jsou povinne</em></div>
   <div class="sitForm">
     <%= f.submit %>

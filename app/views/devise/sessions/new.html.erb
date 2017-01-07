@@ -11,10 +11,10 @@
 <section id="head">
   <div id="menu">
     <nav>
-      <a class="button-actual" <%= link_to "HOME", '/pages/index' %></a>
+      <a class="menu-button" <%= link_to "HOME", '/pages/index' %></a>
       <a class="menu-button" <%= link_to "HLEDÁM", '/pages/sitters' %> </a>
       <a class="menu-button" <%= link_to "CHCI HLÍDAT", new_user_registration_path, :class => 'navbar-link'  %></a>
-      <a class="menu-button" <%= link_to "LOGIN", new_user_session_path, :class => 'navbar-link'  %></a>
+      <a class="button-actual" <%= link_to "LOGIN", new_user_session_path, :class => 'navbar-link'  %></a>
     </nav>
   </div>
 

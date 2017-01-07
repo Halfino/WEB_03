@@ -211,3 +211,8 @@ tr:nth-child(even) {
     background-color: #e3f1da;
 }
 
+.notice_muj{
+    border: 1px solid #75b748;
+    padding: 3px 7px;
+    background-color: #e3f1da;
+}

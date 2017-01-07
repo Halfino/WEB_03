@@ -4,7 +4,7 @@
       <a class="menu-button" <%= link_to "Web Home", '/pages/index' %></a>
       <a class="menu-button" <%= link_to "Clanky", '/articles' %> </a>
       <a class="button-actual" <%= link_to "Uzivatele", '/admin/userList' %></a>
-      <a class="logout" <%= link_to "Dashboard", '/pages/dashboard'%></a>
+      <a class="menu-button" <%= link_to "Dashboard", '/pages/dashboard'%></a>
     </nav>
   </div>
   <section id="contentAdmin">
@@ -30,7 +30,7 @@
               <td><%= user.created_at%></td>
               <td><%= user.updated_at%></td>
               <td><%= link_to 'Show details', :controller => "admin", :action => "userAdmin", :user => user.id %></td>
-              <td><%= link_to "Destroy", user, method: :delete, data: { confirm: "You sure?" } %></td>
+              <td><%= link_to "Kill that shit", user, method: :delete, data: { confirm: "You sure?" } %></td>
             </tr>
             <%end%>
         </tbody>

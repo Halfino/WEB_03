@@ -1,14 +1,17 @@
 Rails.application.routes.draw do
-  get 'category/new'
 
-  get 'admin/userList'
+  get 'categories/new'
 
-  get 'admin/userAdmin'
-  get 'admin/userEdit'
+  get 'categories/create'
+
   devise_for :users, :controllers => { registrations: 'registrations' }
   resources :articles
   resources :users
+  resources :categories
   root to: 'pages#dashboard'
+  get 'admin/userList'
+  get 'admin/userAdmin'
+  get 'admin/userEdit'
   get 'pages/index'
   get 'pages/sitters'
   get 'pages/dashboard'
