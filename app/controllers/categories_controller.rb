@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new(category_params)
     @category.save
-    render pages_dashboard_path
+    redirect_to articles_path
   end
 
   private

@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-
-  get 'categories/new'
-
-  get 'categories/create'
-
   devise_for :users, :controllers => { registrations: 'registrations' }
   resources :articles
   resources :users
@@ -15,6 +10,8 @@ Rails.application.routes.draw do
   get 'pages/index'
   get 'pages/sitters'
   get 'pages/dashboard'
+  get 'categories/new'
+  get 'categories/create'
 
 get 'admin_user' => 'admin#userList'
   # The priority is based upon order of creation: first created -> highest priority.
