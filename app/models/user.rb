@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   validates :description, presence: {message: "Toto pole nemuze byt prazdne."}, length: 1..500
   validates :city, presence: {message: "Toto pole nemuze byt prazdne"}
   validates :phone, presence: {message: "Toto pole nemuze byt prazdne"},
-            format: {with: /(\A([+][4][2][0](([6][0])|([7][2-7])([0-9]{7}))$))|(\A((([6][0])|([7][2-7]))([0-9]{7})$))/x,
+            format: {with: /(\A([+][4][2][0](([6][0][1-8])|([7][2-5][7]))([0-9]{6}))$)|(\A((([6][0])|([7][2-5]))([0-9]{7})$))/x,
                      message: "Spatny format telefonniho cisla. Mozno pouzit pouze ceske mobilni cislo.
                     Spravny format je (+420)tel.c."}
   validates :email, presence: {message: "Toto pole nemuze byt prazdne"},length: 1..254,
