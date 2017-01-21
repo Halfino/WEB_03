@@ -6,9 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 User.delete_all
-sitters = [["Andrea Sucha", "25", "NErada plavu", "Praha", "Sucharka", "sucharka", "anda.such@seznam.cz", "+420728159784"],
+sitters = [["Andrea Sucha", "25", "NErada plavu", "Praha", "Sucharka", "sucharka", "anda.such@seznam.cz", "+420603123456"],
            ["Marie Mokra", "20", "Miluju vodu a male deti. Bez nich bych nemohla zit", "Praha", "Vodnice", "vodnice",
-           "mana.wet@gmail.com", "775123456"]]
+           "mana.wet@gmail.com", "605123456"]]
 
 sitters.each do |name, age, description, city, username, password, email, phone|
   user = User.new(name: name, age:age, description:description, city:city, username:username, password:password,
